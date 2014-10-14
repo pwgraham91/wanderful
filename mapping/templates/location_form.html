@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {% for field in location_form %}
+        <p>{{ field.label_tag }} {{ field }}</p>
+        {% endfor %}
+        <input type="submit" value="Submit Location" />
+    </form>
+{% endblock content %}
